@@ -211,7 +211,7 @@ body {
   border-color: rgba(195,163,90,.7);
 }
 
-.hidden { display: none !important; }
+.invisible { display: none !important; }
 
 .content {
   position: relative;

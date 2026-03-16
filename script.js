@@ -48,9 +48,8 @@
   };
 
   const applyScrollButtonVisibility = () => {
-    if (refs.content.classList.contains('hidden')) return;
     const shouldShow = window.scrollY > 280;
-    refs.scrollTopBtn.classList.toggle('hidden', !shouldShow);
+    refs.scrollTopBtn.classList.toggle('invisible', !shouldShow);
   };
 
   const playAudioWithGesture = () => {
@@ -64,11 +63,10 @@
   };
 
   refs.enterBtn.addEventListener('click', () => {
-    refs.startScreen.classList.add('hidden');
-    refs.content.classList.remove('hidden');
+    refs.startScreen.classList.add('invisible');
     refs.content.classList.add('visible');
     playAudioWithGesture();
-    refs.scrollTopBtn.classList.remove('hidden');
+    refs.scrollTopBtn.classList.remove('invisible');
   });
 
   refs.audioToggle.addEventListener('click', () => {
@@ -134,7 +132,7 @@
 
   refs.unlockBtn.addEventListener('click', () => {
     if (refs.unlockBtn.disabled) return;
-    refs.finalMessage.classList.remove('hidden');
+    refs.finalMessage.classList.remove('invisible');
     refs.unlockBtn.textContent = 'Pesan Terakhir Sudah Dibuka';
     refs.unlockBtn.disabled = true;
     refs.lockStatus.textContent = '💖 Kamu berhasil sampai akhir!';
